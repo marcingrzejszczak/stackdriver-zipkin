@@ -23,12 +23,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import org.springframework.context.annotation.Import;
 import zipkin.server.ZipkinHttpCollector;
+import zipkin.server.ZipkinQueryApiV1;
 import zipkin.server.ZipkinServerConfiguration;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import({ZipkinServerConfiguration.class, ZipkinHttpCollector.class})
+@Import({ZipkinServerConfiguration.class, ZipkinHttpCollector.class, ZipkinQueryApiV1.class })
 public @interface EnableStackdriverCollector {
 
 }
